@@ -4,8 +4,9 @@
 }
 
 :root{
-    --color-whiteCell: white;
-    --color-blackCell: grey;
+    --color-whiteCell: #ffffff;
+    --color-blackCell: #999999;
+    --color-border: #555555;
     --size-cell: 64px;
     --size-grid: 512px;
     --size-border: 16px;
@@ -27,7 +28,7 @@ header{
 }
 
 main{
-    border: var(--size-border) solid darkgray;
+    border: var(--size-border) solid var(--color-border);
     height: var(--size-grid);
     width: var(--size-grid);
 }
@@ -56,7 +57,16 @@ main{
 .bCell{
     background-color: var(--color-blackCell);
 }
+.cellIndex{
+    font-size: 0.8em;
+    color: var(--color-border);
+}
 
+.piece{
+    width: var(--size-cell);
+    height: var(--size-cell);
+    image-rendering: crisp-edges;
+}
 
 /*CELLS PLACEMENT*/
 #A8{
