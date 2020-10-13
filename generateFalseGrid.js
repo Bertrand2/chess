@@ -13,13 +13,13 @@ const setup = [
     "wRook","wKnight","wBishop","wKing","wQueen","wBishop","wKnight","wRook"
 ];
 
-for(let i=0 ; i<64 ; i++){
+for(let i=0 ; i<64 ; i++) {
     let newCell = document.createElement("div");
 
-    if( (i + Math.floor(i/8))%2 === 0){
-        newCell.setAttribute("class" , "cell wCell");
+    if( (i + Math.floor(i/8))%2 === 0) {
+        newCell.setAttribute("class" , `cell wCell ${alphabet[i%8]}${8-Math.floor(i/8)}`);
     }else{
-        newCell.setAttribute("class" , "cell bCell");
+        newCell.setAttribute("class" , `cell bCell ${alphabet[i%8]}${8-Math.floor(i/8)}`);
     }
     newCell.id = `${alphabet[i%8]}${8-Math.floor(i/8)}`;
     newCell.innerHTML = `<p class="cellIndex">${newCell.id}</p>`;
@@ -32,8 +32,7 @@ for (let i=0; i<64 ; i++) {
     if(setup[i] !== 0){
         let piece = document.createElement("img");
         piece.src = `assets/${setup[i]}.png`;
-        piece.setAttribute("class","piece");
-        piece.id = cells[i].id;
+        piece.setAttribute("class",`piece ${cells[i].id}`);
         
         gameBox.appendChild(piece);
     }
